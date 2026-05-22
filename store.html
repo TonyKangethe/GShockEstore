@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>G-SHOCK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/dexie@4/dist/dexie.js"></script>
+</head>
+
+<body class="bg-white text-gray-600">
+    <!--Navigation bar-->
+    <nav class=" container flex items-center justify-between w-full sticky top-0 z-50 py-3 mx-auto bg-white">
+        <a href="home.html">
+            <img src="images/g-shocklogo.png" alt="g-shocklogo" class="h-16 w-auto">
+        </a>    
+
+        <ul class="flex gap-6 text-gray-700">
+            <li><a href="store.html" class="hover:text-black">Store</a></li>
+            <li><a href="#" class="hover:text-black">Collection</a></li>
+            <li><a href="#" class="hover:text-black">Support</a></li>
+        </ul>
+
+        <div class="flex items-start gap-5">
+            <a class="flex items-center" href="#">
+                <span class="material-symbols-outlined">search</span>
+            </a>
+            <a class="flex items-center" href="cart.html">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <p id="cart_items_num" class="text-red-600"></p>
+            </a>
+            <a class="flex items-center" href="#">
+                <span class="material-symbols-outlined">person</span>
+            </a>
+        </div>
+    </nav>
+
+
+
+    <section class="container rounded-3xl mx-auto my-6 overflow-hidden">
+        <img class="object-cover"
+            src="https://www.grahams.com.au/cdn/shop/collections/Banner-G-Shock-Shiels-Grahams_1.jpg?v=1753405918&width=1600"
+            alt="">
+    </section>
+
+    <section class="container mx-auto">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between pb-6 mb-12">
+            <div class="flex flex-wrap gap-6 uppercase tracking-widest text-sm mb-6 md:mb-0">
+                <button class="tab-btn flex py-3 px-4 font-medium text-gray-700 border-b-2 border-blue-500 transition-colors" data-tab="All">
+                    All
+                </button>
+                <button class="tab-btn flex py-3 px-4 font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 transition-colors" data-tab="Digital">
+                    Digital
+                </button>
+                <button class="tab-btn flex py-3 px-4 font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 transition-colors" data-tab="Analog-Digital">
+                    Analog-Digital
+                </button>
+                <button class="tab-btn flex py-3 px-4 font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 transition-colors" data-tab="Outdoor">
+                    Outdoor
+                </button>
+                <button class="tab-btn flex py-3 px-4 font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 transition-colors" data-tab="Premium">
+                    Premium
+                </button>
+                <button class="tab-btn flex py-3 px-4 font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 transition-colors" data-tab="Luxury">
+                    Luxury
+                </button>
+                <button class="tab-btn flex py-3 px-4 font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 transition-colors" data-tab="Fitness">
+                    Fitness
+                </button>
+            </div>
+            
+    
+            <div>
+                <select id="sort-select"
+                    class="border border-0 px-4 py-2 text-sm uppercase tracking-wide outline-none hover:border-black transition">
+                    <option value="featured">Featured</option>
+                    <option value="newest">Newest</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+    
+    
+            <div class="tab-content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16" id="All">
+
+            </div>
+            <div class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16"" id="Digital">
+
+            </div>
+            <div class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16"" id="Analog-Digital">
+
+            </div>
+            <div class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16"" id="Outdoor">
+
+            </div>
+            <div class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16"" id="Premium">
+ 
+            </div>
+            <div class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16"" id="Fitness">
+
+            </div>
+            <div class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16"" id="Luxury">
+
+            </div>
+    
+    
+        <div class="text-center mt-20">
+            <button class="rounded-full border border-gray-300 px-10 py-4 text-sm uppercase tracking-[0.2em] text-black transition-all duration-300 hover:border-black hover:bg-black hover:text-white">
+                Load More
+            </button>
+        </div>
+        </div>
+    </section>
+
+    <footer class="container mx-auto bg-gray-100 p-10 rounded-3xl mb-2 mt-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 ">
+            <div class="sm:col-span-2 lg:col-span-1">
+                <div class="order-1 md:order-1">
+                    <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="index.html">
+                         <img class="h-20 w-auto object-contain" src="images/g-shocklogo.png" alt="g-shocklogo">
+                    </a>
+                </div>
+                <p class="text-sm/7 mt-6">Discover the latest G-SHOCK watches designed with iconic durability, minimalist aesthetics, and modern functionality.</p>
+            </div>
+            <div class="flex flex-col lg:items-center lg:justify-center">
+                <div class="flex flex-col text-sm space-y-2.5">
+                    <h2 class="font-semibold mb-3 text-gray-800">Company</h2>
+                    <a class="hover:text-slate-600 transition" href="#">Home</a>
+                    <a class="hover:text-slate-600 transition" href="#">Store</a>
+                    <a class="hover:text-slate-600 transition" href="#">Collection</a>
+                    <a class="hover:text-slate-600 transition" href="#">Support</a>
+                </div>
+            </div>
+            <div>
+                <h2 class="font-semibold text-gray-800 mb-3">Social Media</h2>
+                <div class="text-sm space-y-6 max-w-sm">
+                </div>
+            </div>
+        </div>
+        <p class="py-4 text-center border-t mt-6 border-slate-200">
+            &copy;&nbsp;2026 &nbsp; <a href="#">G-SHOCK</a>&nbsp; All Right Reserved.
+        </p>
+    </footer>
+
+
+
+
+    <script src="db.js"></script>
+    <script src="script.js"></script>
+    <script src="app.js"></script>
+
+
+
+</body>
+
+</html>
